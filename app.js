@@ -105,7 +105,7 @@ app.use((req,res,next)=>{
 //     res.send(registerUser);
 
 // })
-
+app.use('/',listingsRouter);
 app.use('/listing',listingsRouter);
 app.use('/listing/:id/reviews',reviewRouter);
 app.use('/',userRouter);
