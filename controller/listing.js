@@ -2,7 +2,9 @@ const Listing=require('../models/listing')
 
 module.exports.searchQuery=async(req,res,next)=>{
     let q=req.query.q;
+    console.log(q);
     let result=await Listing.find({location:{ $regex: q, $options: "i" }});
+    
     
     res.render("searchResults.ejs",{ result, query: q });
 }
